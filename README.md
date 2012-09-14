@@ -183,6 +183,10 @@ You can find available packages here: [jamjs.org](http://jamjs.org/packages#/)
 
 If you dont find your cooljs library just bug someone on #jamjs and they will probably help you add it.
 
+### Only users and admins be able to change things in the db
+
+We turned this on by default so you will be aware of where to handle read security. Alter ```couch/ddoc.js``` and modify the validate_doc_update function.
+
 
 
 

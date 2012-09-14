@@ -4,9 +4,10 @@ define('js/app',[
     'handlebars',
     'couchr',
     'garden-app-support',
-    'hbt!templates/test'
+    'hbt!templates/test',
+    'hbt!templates/all_doc',
 ],
-function($, _, handlebars, couch, garden, template){
+function($, _, handlebars, couchr, garden, greeting_t, list_t){
     var exports = {};
 
     /**
@@ -20,8 +21,13 @@ function($, _, handlebars, couch, garden, template){
      */
     exports.on_dom_ready = function(){
         garden.get_garden_ctx(function(err, garden_ctx){
-            $('.main').html(template(garden_ctx));
+            $('.main').append(greeting_t(garden_ctx));
         })
+
+        couchr.get('_db/_all_docs', function (err, resp) {
+            $('.main').append(list_t(resp));
+        });
+
     }
 
 
