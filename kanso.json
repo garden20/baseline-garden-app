@@ -6,7 +6,7 @@
     "url": "https://github.com/garden20/baseline-garden-app",
     "categories": ["learning"],
     "flattr_user_id" : "eckoit",
-    "attachments": ["css", "img", "jam", "js",  "index.html"],
+    "attachments": ["css", "img", "jam", "js",  "index.html", "application.appcache", "templates"],
     "modules": "couch",
     "load": "couch/ddoc",
 
@@ -23,10 +23,23 @@
         "img/promo/screenshot1.png",
         "img/promo/screenshot2.png"
     ],
+    "less": {
+        "compile": [ "css/app.less" ]
+    },
+    "cache_manifests": [
+            "application.appcache"
+        ],
+    "jam" : {
+        "include" : ["js/app", "domReady"]
+    },
     "dependencies": {
         "modules": null,
         "attachments": null,
         "properties": null,
-        "underscore": null
+        "underscore": null,
+        "less-precompiler": "1.3.0-kanso.6",
+        "cache-manifest-timestamp": null,
+        "git-info" : null,
+        "kanso-jam" : null
     }
 }

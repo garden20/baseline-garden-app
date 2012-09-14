@@ -15,15 +15,34 @@ exports.rewrites = [
 
 
 
+exports.validate_doc_update = function(newDoc, oldDoc, userCtx, secObj) {
+    var ddoc = this;
 
-exports.views.by_word = {
-    map : function(doc) {
-        if (!doc.tag) return;
-        for (var i = 0; i < doc.tag.length; i++) {
+    secObj.admins = secObj.admins || {};
+    secObj.admins.names = secObj.admins.names || [];
+    secObj.admins.roles = secObj.admins.roles || [];
 
-            emit(doc.tag[i], null);
-        };
-    },
-    reduce: '_count'
+    var IS_DB_ADMIN = false;
+    if(~ userCtx.roles.indexOf('_admin')) {
+        IS_DB_ADMIN = true;
+    }
+    if(~ secObj.admins.names.indexOf(userCtx.name)) {
+        IS_DB_ADMIN = true;
+    }
+    for(var i = 0; i < userCtx.roles; i++) {
+        if(~ secObj.admins.roles.indexOf(userCtx.roles[i])) {
+            IS_DB_ADMIN = true;
+        }
+    }
+
+    var IS_LOGGED_IN_USER = false;
+    if (userCtx.name !== null) {
+        IS_LOGGED_IN_USER = true;
+    }
+
+
+    if(IS_DB_ADMIN || IS_LOGGED_IN_USER)
+        log('User : ' + userCtx.name + ' changing document: ' +  newDoc._id);
+    else
+        throw {'forbidden':'Only admins and users can alter documents'};
 }
-

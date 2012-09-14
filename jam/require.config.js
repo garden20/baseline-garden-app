@@ -20,14 +20,29 @@ var jam = {
             "main": "events.js"
         },
         {
+            "name": "garden-app-support",
+            "location": "jam/garden-app-support",
+            "main": "garden-app-support.js"
+        },
+        {
             "name": "handlebars",
             "location": "jam/handlebars",
             "main": "handlebars.js"
         },
         {
+            "name": "hbt",
+            "location": "jam/hbt",
+            "main": "hbt.js"
+        },
+        {
             "name": "jquery",
             "location": "jam/jquery",
             "main": "jquery.js"
+        },
+        {
+            "name": "text",
+            "location": "jam/text",
+            "main": "text.js"
         },
         {
             "name": "underscore",

@@ -2,9 +2,11 @@ define('js/app',[
     'jquery',
     'underscore',
     'handlebars',
-    'couchr'
+    'couchr',
+    'garden-app-support',
+    'hbt!templates/test'
 ],
-function($, _, handlebars, couch){
+function($, _, handlebars, couch, garden, template){
     var exports = {};
 
     exports.init = function() {
@@ -13,6 +15,11 @@ function($, _, handlebars, couch){
 
     exports.on_dom_ready = function(){
         console.log('dom!~');
+        garden.get_user_ctx(function(err, usrCtx){
+            console.log(err, usrCtx);
+        })
+        $('.main').html(template());
+
     }
 
 
