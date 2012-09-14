@@ -3,9 +3,39 @@ var jam = {
         {
             "name": "bootstrap",
             "location": "jam/bootstrap"
+        },
+        {
+            "name": "couchr",
+            "location": "jam/couchr",
+            "main": "couchr-browser.js"
+        },
+        {
+            "name": "domReady",
+            "location": "jam/domReady",
+            "main": "domReady.js"
+        },
+        {
+            "name": "events",
+            "location": "jam/events",
+            "main": "events.js"
+        },
+        {
+            "name": "handlebars",
+            "location": "jam/handlebars",
+            "main": "handlebars.js"
+        },
+        {
+            "name": "jquery",
+            "location": "jam/jquery",
+            "main": "jquery.js"
+        },
+        {
+            "name": "underscore",
+            "location": "jam/underscore",
+            "main": "underscore.js"
         }
     ],
-    "version": "0.1.14",
+    "version": "0.2.6",
     "shim": {}
 };
 

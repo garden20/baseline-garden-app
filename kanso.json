@@ -23,22 +23,10 @@
         "img/promo/screenshot1.png",
         "img/promo/screenshot2.png"
     ],
-    "load": "lib/app",
-    "less": {
-            "compile": "css/main.less"
-    },
-    "handlebars": {
-        "all_partials": true,
-        "templates": "templates"
-    },
     "dependencies": {
         "modules": null,
         "attachments": null,
         "properties": null,
-        "underscore": null,
-        "bootstrap-less" : null,
-        "less-precompiler": null,
-        "handlebars": null,
-        "handlebars-helpers": "0.0.2"
+        "underscore": null
     }
 }
