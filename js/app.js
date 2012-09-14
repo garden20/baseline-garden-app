@@ -9,17 +9,19 @@ define('js/app',[
 function($, _, handlebars, couch, garden, template){
     var exports = {};
 
+    /**
+     * This is where you will put things you can do before the dom is loaded.
+     */
     exports.init = function() {
-        console.log('init');
     }
 
+    /**
+     * This that occur after the dom has loaded.
+     */
     exports.on_dom_ready = function(){
-        console.log('dom!~');
-        garden.get_user_ctx(function(err, usrCtx){
-            console.log(err, usrCtx);
+        garden.get_garden_ctx(function(err, garden_ctx){
+            $('.main').html(template(garden_ctx));
         })
-        $('.main').html(template());
-
     }
 
 

@@ -15,7 +15,7 @@
     /**
      * Callback when the topbar has loaded.
      */
-    exports.on_topbar = function(/* optional*/ timeout, callback) {
+    exports.on_topbar = function( timeout, callback) {
 
         // retrieve arguments as array
         var args = [];
@@ -53,7 +53,7 @@
      * @param after_login_url and optional url you want the user to be redirected to after they login. If omitted
      * the user will be returned to the current url
      */
-    exports.get_login_url = function(/* optional*/ after_login_url, callback) {
+    exports.get_login_url = function( after_login_url, callback) {
         if (isFunction(after_login_url)) {
             callback = after_login_url;
             after_login_url = window.location;
@@ -75,6 +75,22 @@
         })
     }
 
+
+    /**
+     * Get the all the garden details, as one easy to use call
+     * @param callback
+     */
+    exports.get_garden_ctx = function(callback) {
+        exports.on_topbar(function(err){
+            if (err) return callback(err);
+            var garden_ctx = {
+                userCtx : JSON.parse(decodeURI($('#dashboard-topbar-session').data('userctx'))),
+                login_url : $('#dashboard-topbar-session').data('login') + '?redirect=' + encodeURIComponent(window.location)
+            };
+
+            return callback(null, garden_ctx);
+        })
+    }
 
 
     /**

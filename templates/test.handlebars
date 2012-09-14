@@ -1,7 +1,13 @@
 <div class="container">
-    <h1>
-        This is so amazeballs.
-    </h1>
+
+
+    {{#if userCtx.name}}
+        <h1>
+            Hello, {{userCtx.name}}
+        </h1>
+    {{else}}
+        Please <a href="{{login_url}}">Login</a>
+    {{/if}}
 
 
 </div><!-- /container -->
