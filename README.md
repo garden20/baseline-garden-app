@@ -1,7 +1,7 @@
 Baseline Garden App
 ===================
 
-This repo is a starting point to create an app for a garden market such as [Garden20](http://garden20.com/market/).
+This repo is a starting point to create a couchapp or an app for a garden market such as [Garden20](http://garden20.com/market/).
 
 Fork me and modify!
 
