@@ -125,13 +125,17 @@ kanso push https://garden.iriscouch.com/garden/_design/garden/_rewrite/upload --
 
 ## Push your app to the Garden Market
 
-Create an account, if you have not done so, at http://garden20.com/account
+You will need a 'developer' account. For now, just use futon to signup for an account here:
+
+https://garden20.iriscouch.com/_utils/
 
 Then push your app
 
 ```
 kanso push http://garden20.com/market/upload --minify
 ```
+
+You will be prompted for your username and password.
 
 ## FAQ
 
